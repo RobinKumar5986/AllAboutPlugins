@@ -1,0 +1,44 @@
+<idea-plugin>
+    <id>com.intelij.AllAboutPlugin</id>
+    <name>All About Plugin</name>
+    <version>1.0-SNAPSHOT</version>
+    <vendor email="N/A">Robin Kumar</vendor>
+
+    <description>
+        This plugin is for testing all the features of the plugin.
+    </description>
+
+    <idea-version since-build="211" until-build="241.*"/>
+    <depends>com.intellij.modules.platform</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Register the Tool Window -->
+        <toolWindow id="MyToolWindow" factoryClass="com.intelij.AllAboutPlugin.MyToolWindowFactory" anchor="right"/>
+    </extensions>
+    <actions>
+        <!-- ✅ Define a new top-level menu -->
+        <group id="com.intelij.AllAboutPlugin.MyMenu"
+               text="My Menu"
+               description="Custom menu for my plugin"
+               popup="true">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+        </group>
+
+        <!-- ✅ Action 1 appears in "Tools" and "My Menu" -->
+        <action id="com.intelij.AllAboutPlugin.Action1"
+                class="com.intelij.AllAboutPlugin.Action1"
+                text="Action 1"
+                description="Executes Action 1">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <add-to-group group-id="com.intelij.AllAboutPlugin.MyMenu" anchor="first"/>
+        </action>
+
+        <!-- ✅ Action 2 appears only inside "My Menu" -->
+        <action id="com.intelij.AllAboutPlugin.Action2"
+                class="com.intelij.AllAboutPlugin.Action2"
+                text="Action 2"
+                description="Executes Action 2">
+            <add-to-group group-id="com.intelij.AllAboutPlugin.MyMenu" anchor="last"/>
+        </action>
+
+    </actions>
+</idea-plugin>
