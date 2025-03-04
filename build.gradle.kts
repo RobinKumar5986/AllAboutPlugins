@@ -19,9 +19,9 @@ kotlin {
 }
 
 intellij {
-    version.set("2024.1.3") // Updated IntelliJ version
-    type.set("IC") // IntelliJ Community Edition
-    plugins.set(listOf("java")) // Required dependencies
+    version.set("2024.1.3") // IntelliJ version
+    type.set("IC") // Community Edition
+    plugins.set(listOf("java", "org.jetbrains.kotlin")) // ✅ Add Kotlin Plugin
 }
 
 tasks {

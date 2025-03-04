@@ -10,10 +10,52 @@
 
     <idea-version since-build="211" until-build="241.*"/>
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>org.jetbrains.kotlin</depends>
+
+
+
+    <!-- ✅ Consolidated all extensions into a single tag -->
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Register the Tool Window -->
-        <toolWindow id="MyToolWindow" factoryClass="com.intelij.AllAboutPlugin.MyToolWindowFactory" anchor="right"/>
+
+        <!-- ✅ Register the Tool Window -->
+        <toolWindow id="MyToolWindow"
+                    factoryClass="com.intelij.AllAboutPlugin.PluginBassic.MyToolWindowFactory"
+                    anchor="right"/>
+
+        <!-- ✅ Status Bar Widget -->
+        <statusBarWidgetProvider implementation="com.intelij.AllAboutPlugin.PluginBassic.MyStatusBarWidget"/>
+
+        <!-- ✅ Custom File Type -->
+        <fileType name="My Custom File"
+                  language="MyLang"
+                  description="Custom file for my plugin"
+                  extensions="xyz"
+                  implementationClass="com.intelij.AllAboutPlugin.CustomLanguageHighliter.MyFileType"/>
+
+        <lang.syntaxHighlighter language="MyLang"
+                                implementationClass="com.intelij.AllAboutPlugin.CustomLanguageHighliter.MySyntaxHighlighter"/>
+
+        <!-- ✅ Startup Activity -->
+        <postStartupActivity implementation="com.intelij.AllAboutPlugin.EditorActionHandler.MyStartupActivity"/>
+
+
+        <postStartupActivity implementation="com.intelij.AllAboutPlugin.MyStartupListener"/>
+        <!-- ✅ Declare a notification group -->
+        <notificationGroup id="My Plugin Notifications" displayType="BALLOON"/>
+
+        <localInspection
+                language="kotlin"
+                groupPath="Custom Inspections"
+                displayName="Detect Long Methods"
+                shortName="LongMethodInspection"
+                enabledByDefault="true"
+                level="WARNING"
+                implementationClass="com.intelij.AllAboutPlugin.CodeInspection.MyKotlinInspection"/>
+
     </extensions>
+
+
     <actions>
         <!-- ✅ Define a new top-level menu -->
         <group id="com.intelij.AllAboutPlugin.MyMenu"
@@ -24,8 +66,8 @@
         </group>
 
         <!-- ✅ Action 1 appears in "Tools" and "My Menu" -->
-        <action id="com.intelij.AllAboutPlugin.Action1"
-                class="com.intelij.AllAboutPlugin.Action1"
+        <action id="com.intelij.AllAboutPlugin.PluginBassic.Action1"
+                class="com.intelij.AllAboutPlugin.PluginBassic.Action1"
                 text="Action 1"
                 description="Executes Action 1">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
@@ -33,12 +75,12 @@
         </action>
 
         <!-- ✅ Action 2 appears only inside "My Menu" -->
-        <action id="com.intelij.AllAboutPlugin.Action2"
-                class="com.intelij.AllAboutPlugin.Action2"
+        <action id="com.intelij.AllAboutPlugin.PluginBassic.Action2"
+                class="com.intelij.AllAboutPlugin.PluginBassic.Action2"
                 text="Action 2"
                 description="Executes Action 2">
             <add-to-group group-id="com.intelij.AllAboutPlugin.MyMenu" anchor="last"/>
         </action>
-
     </actions>
+
 </idea-plugin>
