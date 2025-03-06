@@ -1,7 +1,8 @@
 # AllAboutPlugins
+![Kotlin](https://img.shields.io/badge/Kotlin-17-blue?style=flat-square)
 
 🚀 **AllAboutPlugins** is a comprehensive guide and implementation of various plugin development features for IntelliJ-based IDEs. Whether you're customizing UI elements, creating new editor functionalities, or enhancing code insights, this project covers it all!
-![Kotlin](https://img.shields.io/badge/Kotlin-17-blue?style=flat-square)
+
 ---
 
 ## 📋 Overview Table
