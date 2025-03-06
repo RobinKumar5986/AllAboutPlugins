@@ -10,7 +10,7 @@ class MyLexer : LexerBase() {
     private var tokenEnd = 0
     private var tokenType: IElementType? = null
 
-    private val KEYWORDS = setOf("if", "else", "for", "while", "return", "fun", "robin")
+    private val KEYWORDS = setOf("if", "else", "for", "while", "return", "fun", "robin","boom")
 
     override fun start(buffer: CharSequence, startOffset: Int, endOffset: Int, initialState: Int) {
         this.buffer = buffer

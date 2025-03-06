@@ -18,6 +18,8 @@
     <!-- ✅ Consolidated all extensions into a single tag -->
     <extensions defaultExtensionNs="com.intellij">
 
+        <intentionAction implementationClass="com.intelij.AllAboutPlugin.PendingCommentInspection.ReplacePendingWithTodoIntention"/>
+        <localInspection implementationClass="com.intelij.AllAboutPlugin.PendingCommentInspection.PendingCommentInspection"/>
         <!-- ✅ Register the Tool Window -->
         <toolWindow id="MyToolWindow"
                     factoryClass="com.intelij.AllAboutPlugin.PluginBassic.MyToolWindowFactory"
