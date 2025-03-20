@@ -17,6 +17,7 @@
 | **Custom File Types**       | Define new file types with custom syntax. |
 | **Editor Actions & Listeners** | Handle editor events like mouse clicks and key presses. |
 | **Code Inspections**        | Create custom code analysis tools. |
+| **Networking**        | Performs Networking using OKHTTP3 |
 
 ---
 
