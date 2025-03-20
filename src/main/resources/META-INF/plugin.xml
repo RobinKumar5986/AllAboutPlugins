@@ -25,6 +25,13 @@
                     factoryClass="com.intelij.AllAboutPlugin.PluginBassic.MyToolWindowFactory"
                     anchor="right"/>
 
+        <!-- ✅ Register a new Tool Window for API -->
+        <toolWindow id="ApiToolWindow"
+                    factoryClass="com.intelij.AllAboutPlugin.networking.ApiToolWindowFactory"
+                    anchor="right"
+                    icon="AllIcons.General.Web"/>
+
+
         <!-- ✅ Status Bar Widget -->
         <statusBarWidgetProvider implementation="com.intelij.AllAboutPlugin.PluginBassic.MyStatusBarWidget"/>
 
